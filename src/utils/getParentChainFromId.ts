@@ -1,4 +1,4 @@
-import { extractChain } from 'viem';
+import { extractChain } from 'viembera';
 import { ParentChain, isValidParentChainId } from '../types/ParentChain';
 import { chains } from '../chains';
 
