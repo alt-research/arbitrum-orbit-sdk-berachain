@@ -12,6 +12,7 @@ import {
   sepolia,
   holesky,
   arbitrumSepolia,
+  berachainTestnetbArtio,
   baseSepolia,
   nitroTestnodeL1,
   nitroTestnodeL2,
@@ -67,6 +68,10 @@ const blockExplorerApiUrls: Record<ParentChainId, { url: string; apiKey: string 
   [holesky.id]: {
     url: 'https://api-holesky.etherscan.io/api',
     apiKey: etherscanApiKey,
+  },
+  [berachainTestnetbArtio.id]: {
+    url: '',
+    apiKey: '',
   },
   // testnet L2
   [arbitrumSepolia.id]: {
@@ -131,6 +136,7 @@ const contracts: ContractConfig[] = [
       // testnet L1
       [sepolia.id]: '0xfbd0b034e6305788007f6e0123cc5eae701a5751',
       [holesky.id]: '0xB512078282F462Ba104231ad856464Ceb0a7747e',
+      [berachainTestnetbArtio.id]: '0x0000000000000000000000000000000000000000',
       // testnet L2
       [arbitrumSepolia.id]: '0x06E341073b2749e0Bb9912461351f716DeCDa9b0',
       [baseSepolia.id]: '0x1E0921818df948c338380e722C8aE91Bb285763C',
@@ -152,6 +158,7 @@ const contracts: ContractConfig[] = [
       // testnet L1
       [sepolia.id]: '0xfb774ea8a92ae528a596c8d90cbcf1bdbc4cee79',
       [holesky.id]: '0x03c70F125Df471E4fd0515ca38504edFE6900F19',
+      [berachainTestnetbArtio.id]: '0x2138383bfc3080542e5f43d2ddf9fd6666fd996e',
       // testnet L2
       [arbitrumSepolia.id]: '0xd2Ec8376B1dF436fAb18120E416d3F2BeC61275b',
       [baseSepolia.id]: '0x6e244cD02BBB8a6dbd7F626f05B2ef82151Ab502',
@@ -173,6 +180,7 @@ const contracts: ContractConfig[] = [
       // testnet L1
       [sepolia.id]: '0x7edb2dfBeEf9417e0454A80c51EE0C034e45a570',
       [holesky.id]: '0xac890ED9bC2494C053cE701F138958df95966d94',
+      [berachainTestnetbArtio.id]: '0xf713d4844c35e8b708970a370508b47e5f25972d',
       // testnet L2
       [arbitrumSepolia.id]: '0x56C486D3786fA26cc61473C499A36Eb9CC1FbD8E',
       [baseSepolia.id]: '0xFC71d21a4FE10Cc0d34745ba9c713836f82f8DE3',

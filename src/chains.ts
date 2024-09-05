@@ -8,6 +8,7 @@ import {
   holesky,
   arbitrumSepolia,
   baseSepolia,
+  berachainTestnetbArtio,
 } from 'viem/chains';
 
 const nitroTestnodeL1 = defineChain({
@@ -69,6 +70,7 @@ export const chains = [
   // testnet L1
   sepolia,
   holesky,
+  berachainTestnetbArtio,
   // testnet L2
   arbitrumSepolia,
   baseSepolia,
@@ -88,6 +90,7 @@ export {
   // testnet L1
   sepolia,
   holesky,
+  berachainTestnetbArtio,
   // testnet L2
   arbitrumSepolia,
   baseSepolia,

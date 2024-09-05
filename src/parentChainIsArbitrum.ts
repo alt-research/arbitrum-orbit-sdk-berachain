@@ -8,6 +8,7 @@ export function parentChainIsArbitrum(parentChainId: ParentChainId): boolean {
     case chains.base.id:
     case chains.sepolia.id:
     case chains.holesky.id:
+    case chains.berachainTestnetbArtio.id:
     case chains.baseSepolia.id:
     case chains.nitroTestnodeL1.id:
       return false;

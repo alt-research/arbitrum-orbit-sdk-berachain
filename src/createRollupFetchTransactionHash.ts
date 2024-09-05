@@ -10,6 +10,7 @@ import {
   sepolia,
   holesky,
   arbitrumSepolia,
+  berachainTestnetbArtio,
   baseSepolia,
   nitroTestnodeL1,
   nitroTestnodeL2,
@@ -50,6 +51,7 @@ const earliestRollupCreatorDeploymentBlockNumber = {
   // testnet L1
   [sepolia.id]: 4741823n,
   [holesky.id]: 1118493n,
+  [berachainTestnetbArtio.id]: 3901860n,
   // testnet L2
   [arbitrumSepolia.id]: 654628n,
   [baseSepolia.id]: 10606961n,

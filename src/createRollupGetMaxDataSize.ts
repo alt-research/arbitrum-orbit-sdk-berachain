@@ -6,6 +6,7 @@ import {
   sepolia,
   holesky,
   arbitrumSepolia,
+  berachainTestnetbArtio,
   baseSepolia,
   nitroTestnodeL1,
   nitroTestnodeL2,
@@ -20,6 +21,7 @@ export function createRollupGetMaxDataSize(parentChainId: ParentChainId): bigint
     // testnet L1
     case sepolia.id:
     case holesky.id:
+    case berachainTestnetbArtio.id:
     // local nitro-testnode L1
     case nitroTestnodeL1.id:
       return BigInt(117_964);

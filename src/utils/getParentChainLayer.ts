@@ -7,6 +7,7 @@ import {
   arbitrumNova,
   base,
   arbitrumSepolia,
+  berachainTestnetbArtio,
   baseSepolia,
   nitroTestnodeL2,
 } from '../chains';
@@ -20,6 +21,7 @@ export function getParentChainLayer(parentChainId: ParentChainId): 1 | 2 {
     // testnet L1
     case sepolia.id:
     case holesky.id:
+    case berachainTestnetbArtio.id:
     // local nitro-testnode L1
     case nitroTestnodeL1.id:
       return 1;
