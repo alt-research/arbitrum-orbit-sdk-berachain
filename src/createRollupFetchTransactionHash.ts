@@ -61,12 +61,53 @@ export async function createRollupFetchTransactionHash<TChain extends Chain | un
 }: CreateRollupFetchTransactionHashParams<TChain>) {
   const chainId = validateParentChain(publicClient);
 
-  const fromBlock =
-    chainId in earliestRollupCreatorDeploymentBlockNumber
-      ? earliestRollupCreatorDeploymentBlockNumber[chainId]
-      : 'earliest';
+  console.log(`createRollupFetchTransactionHash: chainId = ${chainId}`);
+
+  // This code does not seem to work well
+  // const fromBlock =
+  //   chainId in earliestRollupCreatorDeploymentBlockNumber
+  //     ? earliestRollupCreatorDeploymentBlockNumber[chainId]
+  //     : 'earliest';
+
+  var found = false;
+  for (const key in earliestRollupCreatorDeploymentBlockNumber) {
+    if (chainId.toString() == key) {
+      found = true;
+      break;
+    }
+  }
+  const fromBlock = found ? earliestRollupCreatorDeploymentBlockNumber[chainId] : 'earliest';
 
   // Find the RollupInitialized event from that Rollup contract
+  var transactionHash = "" as `0x${string}`;
+  if (fromBlock != 'earliest') {
+    const latestBlockNumber = await publicClient.getBlockNumber();
+    var rangeStart = fromBlock;
+    while (rangeStart < latestBlockNumber) {
+      var rangeEnd = rangeStart + BigInt(9_999);
+      if (rangeEnd > latestBlockNumber) {
+        rangeEnd = latestBlockNumber;
+      }
+      console.log(`createRollupFetchTransactionHash: getLogs from=${rangeStart} to=${rangeEnd}`);
+      const rollupInitializedEvents = await publicClient.getLogs({
+        address: rollup,
+        event: RollupInitializedEventAbi,
+        fromBlock: rangeStart,
+        toBlock: rangeEnd,
+      });
+      if (rollupInitializedEvents.length == 0) {
+        rangeStart = rangeEnd + BigInt(1);
+      } else if (rollupInitializedEvents.length == 1) {
+        // Get the transaction hash that emitted that event
+        transactionHash = rollupInitializedEvents[0].transactionHash;
+        break;
+      } else {
+        throw new Error(
+          `Expected to find 1 RollupInitialized event for rollup address ${rollup} but found ${rollupInitializedEvents.length}`,
+        );
+      }
+    }
+  } else {
   const rollupInitializedEvents = await publicClient.getLogs({
     address: rollup,
     event: RollupInitializedEventAbi,
