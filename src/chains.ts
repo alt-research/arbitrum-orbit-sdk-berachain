@@ -74,10 +74,10 @@ export const chains = [
   // testnet L2
   arbitrumSepolia,
   baseSepolia,
-  // local nitro-testnode
-  nitroTestnodeL1,
-  nitroTestnodeL2,
-  nitroTestnodeL3,
+  // // local nitro-testnode
+  // nitroTestnodeL1,
+  // nitroTestnodeL2,
+  // nitroTestnodeL3,
 ] as const;
 
 export {
