@@ -3,7 +3,7 @@ import { Client, PublicClient, Transport, Chain } from 'viem';
 import { chains } from '../chains';
 import { Prettify } from './utils';
 
-const dummy = 42161;
+const dummy = 421614;
 
 // exclude nitro-testnode L3 from the list of parent chains
 export type ParentChain = Exclude<(typeof chains)[number], { id: typeof dummy }>;
