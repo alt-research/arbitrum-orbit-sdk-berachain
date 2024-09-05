@@ -8,8 +8,6 @@ import {
   arbitrumSepolia,
   berachainTestnetbArtio,
   baseSepolia,
-  nitroTestnodeL1,
-  nitroTestnodeL2,
 } from './chains';
 import { ParentChainId } from './types/ParentChain';
 
@@ -22,8 +20,6 @@ export function createRollupGetMaxDataSize(parentChainId: ParentChainId): bigint
     case sepolia.id:
     case holesky.id:
     case berachainTestnetbArtio.id:
-    // local nitro-testnode L1
-    case nitroTestnodeL1.id:
       return BigInt(117_964);
 
     // mainnet L2
@@ -33,8 +29,6 @@ export function createRollupGetMaxDataSize(parentChainId: ParentChainId): bigint
     // testnet L2
     case arbitrumSepolia.id:
     case baseSepolia.id:
-    // local nitro-testnode L2
-    case nitroTestnodeL2.id:
       return BigInt(104_857);
   }
 }

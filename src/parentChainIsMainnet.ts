@@ -15,8 +15,6 @@ export function parentChainIsMainnet(parentChainId: ParentChainId): boolean {
     case chains.berachainTestnetbArtio.id:
     case chains.arbitrumSepolia.id:
     case chains.baseSepolia.id:
-    case chains.nitroTestnodeL1.id:
-    case chains.nitroTestnodeL2.id:
       return false;
   }
 }

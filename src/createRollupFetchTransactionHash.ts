@@ -12,8 +12,6 @@ import {
   arbitrumSepolia,
   berachainTestnetbArtio,
   baseSepolia,
-  nitroTestnodeL1,
-  nitroTestnodeL2,
 } from './chains';
 
 export type CreateRollupFetchTransactionHashParams<TChain extends Chain | undefined> = {
@@ -55,9 +53,6 @@ const earliestRollupCreatorDeploymentBlockNumber = {
   // testnet L2
   [arbitrumSepolia.id]: 654628n,
   [baseSepolia.id]: 10606961n,
-  // local nitro-testnode
-  [nitroTestnodeL1.id]: 0n,
-  [nitroTestnodeL2.id]: 0n,
 };
 
 export async function createRollupFetchTransactionHash<TChain extends Chain | undefined>({

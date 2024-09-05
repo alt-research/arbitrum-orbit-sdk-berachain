@@ -14,9 +14,6 @@ import {
   arbitrumSepolia,
   berachainTestnetbArtio,
   baseSepolia,
-  nitroTestnodeL1,
-  nitroTestnodeL2,
-  nitroTestnodeL3,
   chains,
 } from './src/chains';
 import { getImplementation } from './src/utils/getImplementation';
@@ -82,9 +79,6 @@ const blockExplorerApiUrls: Record<ParentChainId, { url: string; apiKey: string 
     url: 'https://api-sepolia.basescan.org/api',
     apiKey: basescanApikey,
   },
-  // local nitro-testnode / fine to omit these as we skip abi fetch
-  [nitroTestnodeL1.id]: { url: '', apiKey: '' },
-  [nitroTestnodeL2.id]: { url: '', apiKey: '' },
 };
 
 export async function fetchAbi(chainId: ParentChainId, address: `0x${string}`) {
@@ -140,9 +134,6 @@ const contracts: ContractConfig[] = [
       // testnet L2
       [arbitrumSepolia.id]: '0x06E341073b2749e0Bb9912461351f716DeCDa9b0',
       [baseSepolia.id]: '0x1E0921818df948c338380e722C8aE91Bb285763C',
-      // local nitro-testnode (on "release" branch with --tokenbridge --l3node --l3-token-bridge flags)
-      [nitroTestnodeL1.id]: '0x596eabe0291d4cdafac7ef53d16c92bf6922b5e0',
-      [nitroTestnodeL2.id]: '0x3BaF9f08bAD68869eEdEa90F2Cc546Bd80F1A651',
     },
   },
   {
@@ -162,9 +153,6 @@ const contracts: ContractConfig[] = [
       // testnet L2
       [arbitrumSepolia.id]: '0xd2Ec8376B1dF436fAb18120E416d3F2BeC61275b',
       [baseSepolia.id]: '0x6e244cD02BBB8a6dbd7F626f05B2ef82151Ab502',
-      // local nitro-testnode (on "release" branch with --tokenbridge --l3node --l3-token-bridge flags)
-      [nitroTestnodeL1.id]: '0x82a3c114b40ecf1fc34745400a1b9b9115c33d31',
-      [nitroTestnodeL2.id]: '0x4287839696d650a0cf93b98351e85199102335d0',
     },
   },
   {
@@ -184,9 +172,6 @@ const contracts: ContractConfig[] = [
       // testnet L2
       [arbitrumSepolia.id]: '0x56C486D3786fA26cc61473C499A36Eb9CC1FbD8E',
       [baseSepolia.id]: '0xFC71d21a4FE10Cc0d34745ba9c713836f82f8DE3',
-      // local nitro-testnode (on "release" branch with --tokenbridge --l3node --l3-token-bridge flags)
-      [nitroTestnodeL1.id]: '0x4Af567288e68caD4aA93A272fe6139Ca53859C70',
-      [nitroTestnodeL2.id]: '0x38F35Af53bF913c439eaB06A367e09D6eb253492',
     },
   },
   {
@@ -225,11 +210,7 @@ export async function assertContractAbisMatch(contract: ContractConfig) {
       // don't fetch abis for testnode
       .filter(([chainIdString]) => {
         const chainId = Number(chainIdString);
-        return (
-          chainId !== nitroTestnodeL1.id &&
-          chainId !== nitroTestnodeL2.id &&
-          chainId !== nitroTestnodeL3.id
-        );
+        return true;
       })
       // fetch abis for all chains and hash them
       .map(async ([chainId, address]) => {

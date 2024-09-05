@@ -2,14 +2,12 @@ import {
   mainnet,
   sepolia,
   holesky,
-  nitroTestnodeL1,
   arbitrumOne,
   arbitrumNova,
   base,
   arbitrumSepolia,
   berachainTestnetbArtio,
   baseSepolia,
-  nitroTestnodeL2,
 } from '../chains';
 import { ParentChainId } from '../types/ParentChain';
 
@@ -22,8 +20,6 @@ export function getParentChainLayer(parentChainId: ParentChainId): 1 | 2 {
     case sepolia.id:
     case holesky.id:
     case berachainTestnetbArtio.id:
-    // local nitro-testnode L1
-    case nitroTestnodeL1.id:
       return 1;
 
     // mainnet L2
@@ -33,8 +29,6 @@ export function getParentChainLayer(parentChainId: ParentChainId): 1 | 2 {
     // testnet L2
     case arbitrumSepolia.id:
     case baseSepolia.id:
-    // local nitro-testnode L2
-    case nitroTestnodeL2.id:
       return 2;
   }
 }

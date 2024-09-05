@@ -10,13 +10,11 @@ export function parentChainIsArbitrum(parentChainId: ParentChainId): boolean {
     case chains.holesky.id:
     case chains.berachainTestnetbArtio.id:
     case chains.baseSepolia.id:
-    case chains.nitroTestnodeL1.id:
       return false;
 
     case chains.arbitrumOne.id:
     case chains.arbitrumNova.id:
     case chains.arbitrumSepolia.id:
-    case chains.nitroTestnodeL2.id:
       return true;
   }
 }
