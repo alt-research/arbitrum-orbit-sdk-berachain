@@ -114,15 +114,14 @@ export async function createRollupFetchTransactionHash<TChain extends Chain | un
     fromBlock,
     toBlock: 'latest',
   });
-
   if (rollupInitializedEvents.length !== 1) {
     throw new Error(
       `Expected to find 1 RollupInitialized event for rollup address ${rollup} but found ${rollupInitializedEvents.length}`,
     );
   }
-
   // Get the transaction hash that emitted that event
-  const transactionHash = rollupInitializedEvents[0].transactionHash;
+    transactionHash = rollupInitializedEvents[0].transactionHash;
+  }
 
   if (!transactionHash) {
     throw new Error(
