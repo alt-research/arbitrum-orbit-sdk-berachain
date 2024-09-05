@@ -95,7 +95,7 @@ export {
   arbitrumSepolia,
   baseSepolia,
   // local nitro-testnode
-  nitroTestnodeL1,
-  nitroTestnodeL2,
-  nitroTestnodeL3,
+  // nitroTestnodeL1,
+  // nitroTestnodeL2,
+  // nitroTestnodeL3,
 };
