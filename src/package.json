@@ -48,7 +48,8 @@
   "author": "Offchain Labs, Inc.",
   "license": "Apache-2.0",
   "peerDependencies": {
-    "viem": "^2.15.0"
+    "viem": "^1.20.0",
+    "viembera": "npm:viem@^2.15.0"
   },
   "dependencies": {
     "@arbitrum/sdk": "^4.0.0",

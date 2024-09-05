@@ -9,7 +9,7 @@ import {
   arbitrumSepolia,
   baseSepolia,
   berachainTestnetbArtio,
-} from 'viem/chains';
+} from 'viembera/chains';
 
 const nitroTestnodeL1 = defineChain({
   id: 1_337,
