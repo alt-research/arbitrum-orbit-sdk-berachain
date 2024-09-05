@@ -1,10 +1,12 @@
 import { Client, PublicClient, Transport, Chain } from 'viem';
 
-import { chains, nitroTestnodeL3 } from '../chains';
+import { chains } from '../chains';
 import { Prettify } from './utils';
 
+const dummy = 12345;
+
 // exclude nitro-testnode L3 from the list of parent chains
-export type ParentChain = Exclude<(typeof chains)[number], { id: typeof nitroTestnodeL3.id }>;
+export type ParentChain = Exclude<(typeof chains)[number], { id: typeof dummy }>;
 export type ParentChainId = ParentChain['id'];
 
 export type ParentChainPublicClient<TChain extends Chain | undefined> = Prettify<
@@ -16,7 +18,7 @@ export function isValidParentChainId(
 ): parentChainId is ParentChainId {
   const ids = chains
     // exclude nitro-testnode L3 from the list of parent chains
-    .filter((chain) => chain.id !== nitroTestnodeL3.id)
+    .filter((chain) => chain.id !== dummy)
     .map((chain) => chain.id) as Number[];
   return ids.includes(Number(parentChainId));
 }
