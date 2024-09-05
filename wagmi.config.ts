@@ -168,7 +168,7 @@ const contracts: ContractConfig[] = [
       // testnet L1
       [sepolia.id]: '0x7edb2dfBeEf9417e0454A80c51EE0C034e45a570',
       [holesky.id]: '0xac890ED9bC2494C053cE701F138958df95966d94',
-      [berachainTestnetbArtio.id]: '0xf713d4844c35e8b708970a370508b47e5f25972d',
+      [berachainTestnetbArtio.id]: '0x05F9BD2b098f09afb0F007Ca9AEc393Dc8E804E9',
       // testnet L2
       [arbitrumSepolia.id]: '0x56C486D3786fA26cc61473C499A36Eb9CC1FbD8E',
       [baseSepolia.id]: '0xFC71d21a4FE10Cc0d34745ba9c713836f82f8DE3',
