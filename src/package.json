@@ -1,7 +1,7 @@
 {
   "name": "@alt-research/orbit-sdk-berachain",
   "description": "TypeScript SDK for building Arbitrum Orbit chains",
-  "version": "0.19.0-beta.3",
+  "version": "0.19.0-beta.4",
   "main": "./dist/index.js",
   "files": [
     "./dist"
